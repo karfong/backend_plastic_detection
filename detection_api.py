@@ -24,6 +24,14 @@ def get_next_image_count():
     numbers = [int(f.replace("plastic", "").replace(".jpg", "")) for f in existing_files if f.replace("plastic", "").replace(".jpg", "").isdigit()]
     return max(numbers, default=0) + 1
 
+# Function to enhance image using gamma correction
+def enhance_image_gamma(image, gamma=1.5):
+    """Apply gamma correction to enhance the image contrast."""
+    inv_gamma = 1.0 / gamma
+    table = np.array([(i / 255.0) ** inv_gamma * 255 for i in np.arange(0, 256)]).astype("uint8")
+    enhanced_img = cv2.LUT(image, table)  # Apply gamma correction
+    return enhanced_img
+
 @app.route('/detect', methods=['POST'])
 def detect():
     if 'image' not in request.files:
@@ -33,6 +41,9 @@ def detect():
     image_bytes = file.read()
     np_img = np.frombuffer(image_bytes, np.uint8)
     img = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
+    
+    # Enhance image contrast
+    img = enhance_image_gamma(img)
     
     # Save image with unique name
     image_counter = get_next_image_count()
