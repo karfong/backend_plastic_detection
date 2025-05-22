@@ -1,0 +1,37 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="PMvpVK33gApFN_w9BWxT">
+    <mxGraphModel dx="786" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="guKidTnlkED9GE5FYUbg-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="guKidTnlkED9GE5FYUbg-1" target="guKidTnlkED9GE5FYUbg-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-1" value="&lt;b&gt;Input Image&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="170" y="60" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="guKidTnlkED9GE5FYUbg-2" target="guKidTnlkED9GE5FYUbg-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-2" value="&lt;b&gt;Backbone&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;[ Conv (64, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Conv (128, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (128, True, x3) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Conv (256, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (256, True, x6) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Conv (512, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (512, True, x6) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Conv (1024, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (1024, True, x3) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ SPPF (1024, 5x5) ]&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="170" y="170" width="140" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="guKidTnlkED9GE5FYUbg-3" target="guKidTnlkED9GE5FYUbg-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-3" value="&lt;b&gt;Head Upsampling &amp;amp; Concatenation&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;[ Upsample x2 ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Concat with earlier layer ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (512) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Upsample x2 ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Concat with earlier layer ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (256) ]&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="360" y="210" width="140" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="guKidTnlkED9GE5FYUbg-4" target="guKidTnlkED9GE5FYUbg-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-4" value="&lt;b&gt;Head Downsampling&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;[ Downsample (256, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Concat ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (512) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Downsample (512, 3, 2) ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ Concat ]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;↓&lt;/div&gt;&lt;div&gt;[ C2f (1024) ]&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="590" y="210" width="140" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="guKidTnlkED9GE5FYUbg-5" value="&lt;b&gt;Detection&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;[ Detect (P3 → small, P4 → medium, P5 → large) ]&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="590" y="560" width="140" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
